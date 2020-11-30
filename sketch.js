@@ -32,6 +32,7 @@ function setup() {
 
   backGround=createSprite(width/2,height/2,800,400);
   backGround.addImage(backgroundImage);
+  background.scale=2;
 
   ground=createSprite(width/2,height+50,800,100);
   ground.addImage(groundImage);
@@ -62,7 +63,7 @@ function draw() {
   
 
   if(gameState===PLAY){
-    ground.velocityX=-5;
+    ground.velocityX=-10;
 
     score=score + Math.round(getFrameRate()/25);
 
@@ -141,7 +142,7 @@ function spawnObstacles(){
     obstacle1.addImage(obstacle1Img);
     obstacle1.scale=0.125;
     //game adaptivity
-    obstacle1.velocityX=-(5+score/50);
+    obstacle1.velocityX=-(10+score/50);
     obstacle1.lifetime=350;
 
     obstaclesGroup.add(obstacle1);
